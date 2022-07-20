@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+
+    <title>Main App</title>
+</head>
+
+<body ng-app="MainApp">
+
+<div class="container" ng-controller="EmployeeController">
+
+    <h3>Create Employee</h3>
+
+    <form >
+        <div class="form-group">
+            <label form="name">First Name</label>
+            <input type="text" class="form-control" id="firstName"  ng-model="employee.firstName" name="firstName">
+        </div>
+
+        <div class="form-group">
+            <label form="name">Last Name</label>
+            <input type="text" class="form-control" id="lastName" ng-model="employee.lastName" name="lastName">
+        </div>
+
+        <div class="form-group">
+            <label form="name">Department Id</label>
+            <input type="text" class="form-control" id="departmentId" ng-model="employee.departmentId" name="departmentId">
+        </div>
+
+        <div class="form-group">
+            <label form="name">Job Title</label>
+            <input type="text" class="form-control" id="jobTitle" ng-model="employee.jobTitle" name="jobTitle">
+        </div>
+
+        <div class="form-group">
+            <label form="name">Gender</label>
+            <select name="gender" class="form-control" id="gender" ng-model="employee.gender">
+                <option value="MALE">MALE</option>
+                <option value="FEMALE">FEMALE</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label form="name">Date Of Birth</label>
+            <input type="text" class="form-control" id="dateOfBirth" ng-model="employee.dateOfBirth" name="dateOfBirth">
+        </div>
+
+        <button ng-click="create(employee)" type="submit" class="btn btn-success">Submit</button>
+
+        <button class="btn btn-success"
+                onclick="window.location.href ='http://localhost:63342/MainApp/templates/employees_list.html?_ijt=nqijc99d41kc0hvmeo4t1d4aj6&_ij_reload=RELOAD_ON_SAVE'">
+            Go to the list of employees
+        </button>
+
+    </form>
+</div>
+
+<script src="js/employees_list.js"></script>
+
+</body>
+</html>

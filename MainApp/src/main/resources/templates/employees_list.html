@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+
+    <title>Main App</title>
+</head>
+
+<body ng-app="MainApp">
+
+<div class="panel panel-primary" ng-controller="EmployeeController">
+
+    <div class="panel-heading">
+        <h3>Employees List</h3>
+    </div>
+
+    <div class="panel-body">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th hidden> № </th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Department Id</th>
+                <th>Job Title</th>
+                <th>Gender</th>
+                <th>Date Of Birth</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="(employeeId, employee) in employeesList">
+                <th hidden>{{employee.employeeId}}</th>
+                <td>{{employee.firstName}}</td>
+                <td>{{employee.lastName}}</td>
+                <td>{{employee.departmentId}}</td>
+                <td>{{employee.jobTitle}}</td>
+                <td>{{employee.gender}}</td>
+                <td>{{employee.dateOfBirth}}</td>
+                <td>
+                    <form>
+                        <button ng-click="deleteById(employee)" class="btn btn-danger"
+                                onclick="window.location.href = 'http://localhost:63342/MainApp/templates/employees_list.html?_ijt=nqijc99d41kc0hvmeo4t1d4aj6&_ij_reload=RELOAD_ON_SAVE'">
+                            Delete
+                        </button>
+                    </form>
+                </td>
+            </tr>
+
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="panel-heading">
+    <button class="btn btn-success"
+            onclick="window.location.href ='http://localhost:63342/MainApp/templates/create_employee.html?_ijt=g18foh7q6llqjhil4v29fdlfiu&_ij_reload=RELOAD_ON_SAVE'">
+        Add a new employee
+    </button>
+</div>
+
+<script src="js/employees_list.js"></script>
+
+</body>
+</html>
+
